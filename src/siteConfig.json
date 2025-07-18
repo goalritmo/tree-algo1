@@ -1,0 +1,15 @@
+{
+  "name": "Yendo al ritmo",
+  "bio": "de ALGO1 (Compu)",
+  "profilePicture": "/profile-picture.jpg",
+  "url": "https://algo1.goalritmo.com",
+  "blog": true,
+  "iconLinks": [],
+  "customLinks": [
+    {
+      "id": "1728534585739",
+      "title": "🎥 Clases Teóricas de Algoritmos I",
+      "url": "https://www.youtube.com/playlist?list=PLLswL1pDm9IySjKob9nqV9xzlQlfHf1T_"
+    }
+  ]
+}
