@@ -77,15 +77,15 @@ import profilePicture from "@/assets/profile-picture.jpg";
     if (now < parcial1) {
       // Aún no llegó el primer parcial
       targetDate = parcial1;
-      title = "Próximo Parcial";
+      title = "PRIMER PARCIAL";
       dateText = "18/09/2025";
       nextInfo = "Próximo: 22/09/2025 - 1° PARCIAL LABORATORIO";
     } else if (now < parcialLab) {
       // Pasó el primer parcial, mostrar el de laboratorio
       targetDate = parcialLab;
-      title = "Próximo Parcial";
+      title = "1° Parcial Laboratorio";
       dateText = "22/09/2025 - 1° PARCIAL LABORATORIO";
-      nextInfo = "Último parcial de la temporada";
+      nextInfo = "Próximo: 03/11/2025 - 2° PARCIAL LABORATORIO";
     } else {
       // Ambos parciales ya pasaron
       targetDate = parcialLab;
