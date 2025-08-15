@@ -34,6 +34,19 @@ import profilePicture from "@/assets/profile-picture.jpg";
       {`← Algoritmos`}
     </a>
   </div>
+  
+  <!-- Componente de cuenta regresiva para parciales -->
+  <div class="countdown-container text-center py-4 mt-8">
+    <h2 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400" id="countdown-title">Próximo Parcial</h2>
+    <div class="countdown-timer text-lg font-mono bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mx-4">
+      <span id="days">--</span> días, 
+      <span id="hours">--</span> horas, 
+      <span id="minutes">--</span> min,
+      <span id="seconds">--</span> segs
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2" id="countdown-date">18/09/2025 - 1° PARCIAL</p>
+  </div>
+
   {/* <div class="text-center pt-8">
     <div>
       <a href="https://chat.whatsapp.com/HsmFlyvX3Qm88cj2aEkzxc" target="_blank" rel="noopener noreferrer">
@@ -46,3 +59,61 @@ import profilePicture from "@/assets/profile-picture.jpg";
     </div>
   </div> */}
 </div>
+
+<script>
+  function updateCountdown() {
+    // Fechas de los parciales
+    const parcial1 = new Date('2025-09-18T14:00:00-03:00'); // 1° PARCIAL
+    const parcialLab = new Date('2025-09-22T14:00:00-03:00'); // 1° PARCIAL LABORATORIO
+    
+    const now = new Date();
+    
+    // Determinar cuál parcial mostrar
+    let targetDate, title, dateText;
+    
+    if (now < parcial1) {
+      // Aún no llegó el primer parcial
+      targetDate = parcial1;
+      title = "Próximo Parcial";
+      dateText = "18/09/2025 - 1° PARCIAL";
+    } else if (now < parcialLab) {
+      // Pasó el primer parcial, mostrar el de laboratorio
+      targetDate = parcialLab;
+      title = "Próximo Parcial";
+      dateText = "22/09/2025 - 1° PARCIAL LABORATORIO";
+    } else {
+      // Ambos parciales ya pasaron
+      targetDate = parcialLab;
+      title = "Parciales Completados";
+      dateText = "Temporada de parciales finalizada";
+    }
+    
+    const difference = targetDate.getTime() - now.getTime();
+    
+    // Actualizar título y fecha
+    document.getElementById('countdown-title').textContent = title;
+    document.getElementById('countdown-date').textContent = dateText;
+    
+    if (difference <= 0) {
+      document.getElementById('days').textContent = '0';
+      document.getElementById('hours').textContent = '0';
+      document.getElementById('minutes').textContent = '0';
+      document.getElementById('seconds').textContent = '0';
+      return;
+    }
+    
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+  }
+  
+  // Actualizar cada segundo
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
