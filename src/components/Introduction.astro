@@ -37,14 +37,13 @@ import profilePicture from "@/assets/profile-picture.jpg";
   
   <!-- Componente de cuenta regresiva para parciales -->
   <div class="countdown-container text-center py-4 mt-8">
-    <h2 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400" id="countdown-title">Primer Parcial</h2>
+    <h2 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400" id="countdown-title">PRIMER PARCIAL: 18/09/2025</h2>
     <div class="countdown-timer text-lg font-mono bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mx-4">
       <span id="days">--</span> días, 
       <span id="hours">--</span> horas, 
       <span id="minutes">--</span> min,
       <span id="seconds">--</span> segs
     </div>
-    <p class="text-base font-medium text-gray-700 dark:text-gray-300 mt-3" id="countdown-date">18/09/2025 - 1° PARCIAL</p>
     <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
       <p class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide" id="next-parcial-info">Próximo: 22/09/2025 - 1° PARCIAL LABORATORIO</p>
     </div>
@@ -72,33 +71,29 @@ import profilePicture from "@/assets/profile-picture.jpg";
     const now = new Date();
     
     // Determinar cuál parcial mostrar
-    let targetDate, title, dateText, nextInfo;
+    let targetDate, title, nextInfo;
     
     if (now < parcial1) {
       // Aún no llegó el primer parcial
       targetDate = parcial1;
-      title = "PRIMER PARCIAL";
-      dateText = "18/09/2025";
+      title = "PRIMER PARCIAL: 18/09/2025";
       nextInfo = "Próximo: 22/09/2025 - 1° PARCIAL LABORATORIO";
     } else if (now < parcialLab) {
       // Pasó el primer parcial, mostrar el de laboratorio
       targetDate = parcialLab;
-      title = "1° Parcial Laboratorio";
-      dateText = "22/09/2025 - 1° PARCIAL LABORATORIO";
+      title = "1° PARCIAL LABORATORIO: 22/09/2025";
       nextInfo = "Próximo: 03/11/2025 - 2° PARCIAL LABORATORIO";
     } else {
       // Ambos parciales ya pasaron
       targetDate = parcialLab;
       title = "Parciales Completados";
-      dateText = "Temporada de parciales finalizada";
       nextInfo = "Esperando próximas fechas";
     }
     
     const difference = targetDate.getTime() - now.getTime();
     
-    // Actualizar título, fecha e información del próximo
+    // Actualizar título e información del próximo
     document.getElementById('countdown-title').textContent = title;
-    document.getElementById('countdown-date').textContent = dateText;
     document.getElementById('next-parcial-info').textContent = nextInfo;
     
     if (difference <= 0) {
