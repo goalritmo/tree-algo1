@@ -45,7 +45,7 @@ import profilePicture from "@/assets/profile-picture.jpg";
       <span id="seconds">--</span> segs
     </div>
     <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-      <p class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide" id="next-parcial-info">PROXIMO: 1° PARCIAL LABORATORIO (22 DE SEPTIEMBRE)</p>
+      <p class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide" id="next-parcial-info">PRÓXIMO: 1° PARCIAL LABORATORIO (22 DE SEPTIEMBRE)</p>
     </div>
   </div>
 
@@ -78,12 +78,12 @@ import profilePicture from "@/assets/profile-picture.jpg";
         // Aún no llegó el primer parcial
         targetDate = parcial1;
         title = "PRIMER PARCIAL (18 DE SEPTIEMBRE)";
-        nextInfo = "PROXIMO: 1° PARCIAL LABORATORIO (22 DE SEPTIEMBRE)";
+        nextInfo = "PRÓXIMO: 1° PARCIAL LABORATORIO (22 DE SEPTIEMBRE)";
       } else if (now < parcialLab) {
         // Pasó el primer parcial, mostrar el de laboratorio
         targetDate = parcialLab;
         title = "1° PARCIAL LABORATORIO (22 DE SEPTIEMBRE)";
-        nextInfo = "PROXIMO: 2° PARCIAL LABORATORIO (3 DE NOVIEMBRE)";
+        nextInfo = "PRÓXIMO: 2° PARCIAL LABORATORIO (3 DE NOVIEMBRE)";
       } else {
         // Ambos parciales ya pasaron
         targetDate = parcialLab;
