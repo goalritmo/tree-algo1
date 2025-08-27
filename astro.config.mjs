@@ -9,6 +9,6 @@ export default defineConfig({
   redirects: {
     "/blog": "/",
   },
-  site: "https://algo1.goalritmo.com",
+  site: "https://algoritmos1.com",
   integrations: [tailwind(), sitemap(), icon()],
 });
