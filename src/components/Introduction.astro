@@ -7,7 +7,7 @@ import profilePicture from "@/assets/profile-picture.jpg";
 ---
 
 <div class="mt-8 pt-4 pb-2">
-  <a href="https://goalritmo.com" target="_blank" rel="noopener noreferrer" class="block">
+  <a href="https://goalritmo.com" target="_blank" rel="noopener noreferrer" class="block group">
     <Image
       src={profilePicture}
       alt={SITE.name}
@@ -15,29 +15,27 @@ import profilePicture from "@/assets/profile-picture.jpg";
       width={256}
       loading="eager"
       draggable="false"
-      class="mx-auto size-32 rounded-full"
+      class="mx-auto size-32 rounded-full group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300 ease-in-out"
     />
-  </a>
-  <a href="https://goalritmo.com" target="_blank" rel="noopener noreferrer" class="block no-underline">
-    <h1 class="mt-4 text-center text-3xl font-semibold hover:text-lightModeForeground dark:hover:text-darkModeForeground">{SITE.name}</h1>
+    <h1 class="mt-4 text-center text-3xl font-semibold group-hover:text-yellow-500 transition-colors duration-200">{SITE.name}</h1>
   </a>
   <p
     class="mt-1 text-balance text-center text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted"
   >
     {SITE.bio}
   </p>
-  <div class="text-center pt-8">
+  {/* <div class="text-center pt-8">
     <a
       href="https://algo.goalritmo.com"
       class="pt-8 text-lg font-medium uppercase text-lightModeForegroundMuted underline underline-offset-4 hover:text-lightModeForeground dark:text-darkModeForegroundMuted dark:hover:text-darkModeForeground"
     >
       {`← Algoritmos`}
     </a>
-  </div>
+  </div> */}
   
   <!-- Componente de cuenta regresiva para parciales -->
   <div class="countdown-container text-center py-4 mt-8">
-    <h2 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400" id="countdown-title">PRIMER PARCIAL (18 DE SEPTIEMBRE)</h2>
+    <h2 class="text-xl font-bold mb-4" style="color: #047af8;" id="countdown-title">PRIMER PARCIAL (18 DE SEPTIEMBRE)</h2>
     <div class="countdown-timer text-lg font-mono p-4 mx-4">
       <span id="days">--</span> días, 
       <span id="hours">--</span> horas, 
